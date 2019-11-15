@@ -16,6 +16,7 @@ len_y = 82  # Length of the actual logo in pixels
 HOW_FAST = 3  # Used to determine how fast the logo will go
 
 
+# Functions
 def case_1(y_pos):  # Checking if the logo hit the bottom floor(need to increase Y)
     return y_pos + len_y >= WINDOW_HEIGHT
 
