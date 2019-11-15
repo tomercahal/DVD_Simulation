@@ -70,14 +70,14 @@ while not finish:
     if not logo_y_pos + len_y in range(1, WINDOW_HEIGHT) or not logo_y_pos in range(1, WINDOW_HEIGHT) \
             or not logo_x_pos + len_x in range(1, WINDOW_WIDTH) or not logo_x_pos in range(1, WINDOW_WIDTH):
         # This big if checks if the logo has touched one of the sides
-        if case_1(logo_y_pos):  # logo it hitting the bottom floor
+        if case_1(logo_y_pos):  # Logo it hitting the bottom floor
             Y_CHANGER = -HOW_FAST
-        if case_2(logo_y_pos):  # logo is hitting the top floor
+        if case_2(logo_y_pos):  # Logo is hitting the top floor
             Y_CHANGER = HOW_FAST
-        if case_3(logo_x_pos):  # logo is hitting the right side
+        if case_3(logo_x_pos):  # Logo is hitting the right side
             X_CHANGER = -HOW_FAST
-        if case_HOW_FAST(logo_x_pos):  # logo is hitting the left side
+        if case_HOW_FAST(logo_x_pos):  # Logo is hitting the left side
             X_CHANGER = HOW_FAST
-    screen.blit(logo, (logo_x_pos, logo_y_pos))  # printing the new logo
+    screen.blit(logo, (logo_x_pos, logo_y_pos))  # Printing the new logo
     pygame.display.flip()
     clock.tick(REFRESH_RATE)
