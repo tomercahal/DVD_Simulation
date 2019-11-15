@@ -37,7 +37,8 @@ def choose_rand(start_value=0, end_value=0):
     """This function creates a random number that is either -1 or 1 if no params were given,
     if params were given it will return a random between the ones given"""
     if start_value and end_value != 0:
-        return random.randint(start_value, end_value)
+        return random.randint(start_value, end_value - len_x)  # Subtract the len of x so
+        # that logo does not spawn outside.
     if random.random() < 0.5:
         return HOW_FAST
     else:
