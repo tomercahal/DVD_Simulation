@@ -34,7 +34,7 @@ def case_HOW_FAST(x_pos):  # Checking if the logo hit the left side(need to decr
 
 
 def choose_rand(start_value=0, end_value=0):
-    """This function creates a random number that is either -1 or 1 if no params were given,
+    """This function creates a random number that is either HOW_FAST or -HOW_FAST if no params were given,
     if params were given it will return a random between the ones given"""
     if start_value and end_value != 0:
         return random.randint(start_value, end_value - len_x)  # Subtract the len of x so
@@ -54,8 +54,8 @@ clock = pygame.time.Clock()
 logo = pygame.image.load(DVD_LOGO)  # This loads the dvd logo into the variable logo
 logo_x_pos = choose_rand(1, WINDOW_WIDTH)  # Chooses a random value for X to start from
 logo_y_pos = choose_rand(1, WINDOW_HEIGHT)  # chooses a random value for Y to start from
-X_CHANGER = choose_rand()  # Automatically gives them either how_fast or -hot_stuff
-Y_CHANGER = choose_rand()  # Automatically gives them either how_fast or -hot_stuff
+X_CHANGER = choose_rand()  # Automatically gives them either how_fast or -HOW_FAST
+Y_CHANGER = choose_rand()  # Automatically gives them either how_fast or -HOW_FAST
 pygame.display.flip()
 
 while not finish:
