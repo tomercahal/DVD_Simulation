@@ -4,8 +4,8 @@ import time
 import math
 
 # Constants
-WINDOW_WIDTH = 800  # X
-WINDOW_HEIGHT = 600  # Y
+WINDOW_WIDTH = 1000  # X
+WINDOW_HEIGHT = 800  # Y
 REFRESH_RATE = 60
 finish = False  # Used for knowing when the user wants to end the game
 WHITE = (255, 255, 255)
@@ -34,7 +34,7 @@ def choose_rand(start_value=0, end_value=0):
     """This function creates a random number that is either -1 or 1 if no params were given,
     if params were given it will return a random between the ones given"""
     if start_value and end_value !=0:
-        return random.randint
+        return random.randint(start_value, end_value)
     if random.random() < 0.5:
         return 1
     else:
@@ -47,8 +47,8 @@ size = (WINDOW_WIDTH, WINDOW_HEIGHT)
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("DVD Simulation")
 clock = pygame.time.Clock()
-ball_x_pos = WINDOW_WIDTH/2
-ball_y_pos = WINDOW_HEIGHT/2
+ball_x_pos = choose_rand(1, WINDOW_WIDTH)  # Chooses a random value for X to start from
+ball_y_pos = choose_rand(1, WINDOW_HEIGHT)  # chooses a random value for Y to start from
 X_CHANGER = choose_rand()  # Automatically gives them either 1 or -1
 Y_CHANGER = choose_rand()  # Automatically gives them either 1 or -1
 pygame.display.flip()
@@ -58,12 +58,12 @@ while not finish:
         if event.type == pygame.QUIT:
             finish = True
             pygame.quit()
-    pygame.display.flip()
+    screen.fill(BLACK)
     ball_x_pos = ball_x_pos + X_CHANGER
     ball_y_pos = ball_y_pos + Y_CHANGER
     if not ball_y_pos + RADIUS in range(1,WINDOW_HEIGHT) or not ball_y_pos - RADIUS in range(1,WINDOW_HEIGHT)\
             or not ball_x_pos + RADIUS in range(1,WINDOW_WIDTH) or not ball_x_pos - RADIUS in range(1,WINDOW_WIDTH):
-        # This big if checks is the ball has touched one of the sides
+        # This big if checks if the ball has touched one of the sides
         if case_1(ball_y_pos):  # Ball it hitting the bottom floor
             Y_CHANGER = -1
         if case_2(ball_y_pos):  # Ball is hitting the top floor
