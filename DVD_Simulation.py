@@ -53,8 +53,8 @@ clock = pygame.time.Clock()
 logo = pygame.image.load(DVD_LOGO)  # This loads the dvd logo into the variable logo
 logo_x_pos = choose_rand(1, WINDOW_WIDTH)  # Chooses a random value for X to start from
 logo_y_pos = choose_rand(1, WINDOW_HEIGHT)  # chooses a random value for Y to start from
-X_CHANGER = choose_rand()  # Automatically gives them either 1 or -1
-Y_CHANGER = choose_rand()  # Automatically gives them either 1 or -1
+X_CHANGER = choose_rand()  # Automatically gives them either how_fast or -hot_stuff
+Y_CHANGER = choose_rand()  # Automatically gives them either how_fast or -hot_stuff
 pygame.display.flip()
 
 while not finish:
