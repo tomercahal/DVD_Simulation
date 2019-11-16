@@ -29,7 +29,7 @@ def case_3(x_pos):  # Checking if the logo hit the right side(need to decrease X
     return x_pos + len_x >= WINDOW_WIDTH
 
 
-def case_HOW_FAST(x_pos):  # Checking if the logo hit the left side(need to decrease X)
+def case_4(x_pos):  # Checking if the logo hit the left side(need to decrease X)
     return x_pos - len_x <= 0
 
 
@@ -76,7 +76,7 @@ while not finish:
             Y_CHANGER = HOW_FAST
         if case_3(logo_x_pos):  # Logo is hitting the right side
             X_CHANGER = -HOW_FAST
-        if case_HOW_FAST(logo_x_pos):  # Logo is hitting the left side
+        if case_4(logo_x_pos):  # Logo is hitting the left side
             X_CHANGER = HOW_FAST
     screen.blit(logo, (logo_x_pos, logo_y_pos))  # Printing the new logo
     pygame.display.flip()
