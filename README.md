@@ -1,5 +1,5 @@
 # DVD_Simulation
-This is a basic DVD simulation I created in pygame with python
+This is a basic DVD simulation I created in pygame with python.
 In this project I just wanted to learn some basic skills in pygame.
 I will later on use these skills to create the game snake!
 I tried to make this code as clean as possible plus added some documntation on the code as I go.
